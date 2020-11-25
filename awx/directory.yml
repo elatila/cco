@@ -1,5 +1,6 @@
 --- 
 - name: "Create directory structure"
+  host: all
   win_file: 
     path: "C:\\Temp\\folder\\Atilio_test"
     state: directory
