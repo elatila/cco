@@ -1,0 +1,5 @@
+--- 
+- name: "Create directory structure"
+  win_file: 
+    path: "C:\\Temp\\folder\\Atilio_test"
+    state: directory
