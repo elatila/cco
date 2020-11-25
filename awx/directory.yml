@@ -1,8 +1,8 @@
 --- 
-- name: "Create directory structure"
+- name: Create directory structure
   hosts: all
   task:
-    - name: "Create new directory"
+    - name: Create new directory
       win_file:     
         path: "C:\\Temp\\folder\\Atilio_test"
         state: directory
