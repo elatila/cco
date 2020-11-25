@@ -1,0 +1,7 @@
+---
+- name: Reboot Windows
+  hosts: all
+  tasks:
+    - name: Start Win_Reboot
+      win_reboot:
+      
