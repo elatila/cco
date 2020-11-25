@@ -4,5 +4,5 @@
   task:
     - name: Create new directory
       win_file:     
-        path: "C:\\Temp\\folder\\Atilio_test"
+        path: "C:\Temp\folder\Atilio_test"
         state: directory
