@@ -1,0 +1,11 @@
+--- 
+- name: Install only particular updates based on the KB numbers
+  hosts: all
+  tasks:
+    - name: Start 2020-10 Security Update for Adobe Flash Player for Windows 10 Version 1909
+      ansible.windows.win_updates:
+        category_name:
+          - SecurityUpdates
+            whitelist:
+              - KB4580325
+    
