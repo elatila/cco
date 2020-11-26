@@ -2,7 +2,7 @@
 - hosts: all
   name: Install only particular updates based on the KB numbers
   tasks:
-    ansible.windows.win_updates:
+  - ansible.windows.win_updates:
       category_name:
         - SecurityUpdates
       whitelist:
