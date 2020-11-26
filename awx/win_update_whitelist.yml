@@ -6,6 +6,6 @@
       ansible.windows.win_updates:
         category_name:
           - SecurityUpdates
-            whitelist:
+        whitelist:
               - KB4580325
     
