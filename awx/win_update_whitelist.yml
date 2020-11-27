@@ -1,6 +1,6 @@
 --- 
-- hosts: all
-  name: Install only particular updates based on the KB numbers
+- name: Install only particular updates based on the KB numbers
+  hosts: all
   tasks:
   - win_updates:
       category_name:
