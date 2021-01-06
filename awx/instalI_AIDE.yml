@@ -8,8 +8,9 @@
       - aide
       state: latest
   - name: Start service aide, if not started
-     enable:
-        name: 
-          - aide
+      service:
+        name: aide
+        enabled: yes
+        state: restarted
    
      
