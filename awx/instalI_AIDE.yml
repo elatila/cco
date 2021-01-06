@@ -8,7 +8,7 @@
       - aide
       state: latest
   - name: Start service aide, if not started
-  service:
-    name: aide
-    state: started
+    service:
+     name: aide
+     state: started
      
