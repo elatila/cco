@@ -3,7 +3,7 @@
   become: yes
   tasks:
   - name: Install packages
-    apt:
+    yum:
       name:Install AIDE
       - aide
       state: latest
