@@ -16,7 +16,7 @@
        copy:
          src: /boot/grub2/grub.cfg
          dest: /boot/grub2/grub.cfg.ori
-         src: oracle/copia_etc/grub.cfg
+         src: /oracle/copia_etc/grub.cfg
          dest: /boot/grub2/
          command: chown root:root /boot/grub2/grub.cfg  
          command: chmod og-rwx /boot/grub2/grub.cfg 
