@@ -23,9 +23,8 @@
          #ignore_errors: True
          
      - name: Install Libselinux
-         yum:
-          name: 
-            - libselinux
+       yum:
+          name: libselinux
           state: latest
          
    
