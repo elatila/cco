@@ -22,4 +22,10 @@
           dest: /boot/grub2/
          #ignore_errors: True
          
+     - name: Install Libselinux
+         yum:
+          name: 
+            - libselinux
+          state: latest
+         
    
