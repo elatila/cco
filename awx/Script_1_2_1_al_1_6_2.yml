@@ -14,6 +14,7 @@
        copy:
           src: /boot/grub2/grub.cfg
           dest: /boot/grub2/grub.cfg.ori
+          remote_src: yes
           owner: root
           group: root
           mode: og-rwx
