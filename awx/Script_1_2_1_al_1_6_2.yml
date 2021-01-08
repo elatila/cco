@@ -10,6 +10,7 @@
                 
      - name: Copy file Grub
        # tags: 1.4.1
+       become: yes
        copy:
           src: /boot/grub2/grub.cfg
           dest: /boot/grub2/grub.cfg.ori
