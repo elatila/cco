@@ -9,7 +9,7 @@
        yum:     
          name: repolist
          state: latest
-         ignore_errors: True
+         # ignore_errors: True
          
      - name: Copy file Grub
        tags: 1.4.1
