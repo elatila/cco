@@ -17,9 +17,10 @@
           remote_src: yes
           owner: root
           group: root
-          mode: og-rwx
+          mode: og-rwx # '700'
           src: /oracle/copia_etc/grub.cfg
           dest: /boot/grub2/
+          remote_src: yes
          #ignore_errors: True
          
      - name: Install Libselinux
