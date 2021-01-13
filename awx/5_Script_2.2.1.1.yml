@@ -6,3 +6,5 @@
        yum:
         - name: ntp
           state: latest
+        - name: chrony
+          state: latest
