@@ -1,0 +1,7 @@
+---
+ - name: 1.7.2 Copy file GDM
+   hosts: all
+   become: yes
+     tasks:
+        - name: GDM
+          command: dconf update

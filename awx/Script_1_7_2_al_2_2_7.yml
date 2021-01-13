@@ -1,8 +1,0 @@
----
- - name: Shell 1.7.2 al 2.2.7 #Ejecutar como segundo paso del script, contempla las secciones desde 1.7.2 al 2.2.7
-   hosts: all
-   become: yes
-   
-   tasks:
-     - name: GDM
-       command: dconf update
