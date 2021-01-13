@@ -3,8 +3,15 @@
    hosts: all
    become: yes
    tasks:
-     shell: if systemctl is-enabled --quiet {{ item }}; then systemctl disable {{ item }} && echo disable_ok ; fi
-     register: output
-     changed_when: "'disable_ok' in output.stdout"
-     loop:
-       - avahi-daemon
+     - shell: dpkg-query -W 'avahi'
+       ignore_errors: True
+       register: is_avahi
+       when: ansible_distribution == 'Oracle Linux'
+
+     - shell: rpm -q 'avahi'
+       ignore_errors: True
+       register: is__avahi
+       when: ansible_distribution == 'Oracle Linux'
+
+     - service: name=avahi-daemon enabled=no state=stopped
+       when: is_avahi|failed
