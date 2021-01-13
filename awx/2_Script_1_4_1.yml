@@ -1,0 +1,18 @@
+---
+ - name: 1.4.1 Copy + permission file Grub
+   hosts: all
+   tasks:
+     name: Copy file Grub
+       # tags: 1.4.1
+       become: yes
+       copy:
+          src: /boot/grub2/grub.cfg
+          dest: /boot/grub2/grub.cfg.ori
+          remote_src: yes
+          owner: root
+          group: root
+          mode: og-rwx # '700'
+          src: /oracle/copia_etc/grub.cfg
+          dest: /boot/grub2/
+          remote_src: yes
+         #ignore_errors: True
