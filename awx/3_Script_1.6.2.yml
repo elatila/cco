@@ -1,0 +1,8 @@
+---
+ - name: 1.6.2 Install Libselinux
+   hosts: all
+   tasks:
+     yum:
+       name: libselinux
+       state: latest
+       
