@@ -13,5 +13,8 @@
        register: is__avahi
        when: ansible_distribution == 'Oracle Linux'
 
-     - service: name=avahi-daemon enabled=no state=stopped
+     - service: 
+       name: avahi-daemon
+       enabled: no 
+       state: stopped
        when: is_avahi|failed
