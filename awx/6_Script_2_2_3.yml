@@ -1,0 +1,10 @@
+---
+ - name: 2.2.3 Disable avahi-deamon
+   hosts: all
+   become: yes
+   tasks:
+     shell: if systemctl is-enabled --quiet {{ item }}; then systemctl disable {{ item }} && echo disable_ok ; fi
+     register: output
+     changed_when: "'disable_ok' in output.stdout"
+     loop:
+       - avahi-daemon
