@@ -3,3 +3,4 @@
    hosts: all
    tasks:
      - command: yum repolist
+     - command_warnings: False
