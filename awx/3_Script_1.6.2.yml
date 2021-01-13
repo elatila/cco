@@ -3,6 +3,6 @@
    hosts: all
    tasks:
      yum:
-       name: libselinux
-       state: latest
+       - name: libselinux
+       - state: latest
        
