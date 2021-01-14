@@ -3,20 +3,21 @@
    hosts: all
    become: yes
    tasks:
-     - shell: dpkg-query -W 'avahi'
-       ignore_errors: True
-       register: is_avahi
-       when: ansible_distribution == 'Oracle Linux'
-
-     - shell: rpm -q 'avahi'
-       ignore_errors: True
-       register: is__avahi
-       when: ansible_distribution == 'Oracle Linux'
+     #- shell: dpkg-query -W 'avahi'
+      # ignore_errors: True
+       #register: is_avahi
+       #when: ansible_distribution == 'Oracle Linux'
+       
+     #- shell: rpm -q 'avahi'
+     #  ignore_errors: True
+     #  register: is__avahi
+     #  when: ansible_distribution == 'Oracle Linux'
 
      - name: Stop avahi-deamon 
        become: yes
-       ansible.builtin.service:
+       service:
          name: avahi-daemon
          enabled: no 
          state: stopped
-         when: is_avahi|failed
+      #   when: is_avahi|failed
+         ignore_error: true
