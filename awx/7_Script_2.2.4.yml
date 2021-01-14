@@ -1,10 +1,10 @@
 ---
- - name: 2.2.3 Disable avahi-deamon
+ - name: 2.2.3 Disable CUPS
    hosts: all
    become: yes
    ignore_errors: yes
    tasks:
-     - name: Stop avahi-deamon 
+     - name: Stop CUPS 
        systemd:
          name: cups
          enabled: no 
