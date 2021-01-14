@@ -4,7 +4,7 @@
    become: yes
    tasks:
      - name: Stop avahi-deamon 
-       ansible.builtin.systemd:
+       systemd:
          name: avahi-daemon
          enabled: no 
          state: stopped
