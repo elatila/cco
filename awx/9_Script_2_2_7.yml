@@ -1,0 +1,17 @@
+---
+ - name: 2.2.7 Disable NFS
+   hosts: all
+   become: yes
+   ignore_errors: yes
+   tasks:
+     - name: Stop NFS
+       systemd:
+         name: nfs
+         enabled: no 
+         state: stopped
+         name: nfs-server
+         enabled: no 
+         state: stopped
+         name: rpcbind
+         enabled: no 
+         state: stopped
