@@ -14,7 +14,7 @@
           dest: /boot/grub2/
           remote_src: yes
           
-     - name: hange file ownership, group, and permissions
+     - name: change file ownership, group, and permissions
        become: yes
        file: 
           path: /boot/grub2/grub.cfg
