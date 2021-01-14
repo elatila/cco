@@ -20,4 +20,4 @@
          enabled: no 
          state: stopped
       #   when: is_avahi|failed
-         ignore_error: true
+         ignore_errors: true
