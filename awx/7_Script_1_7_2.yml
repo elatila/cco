@@ -1,0 +1,9 @@
+---
+ - name: 1.7.2 Update GDM
+   hosts: all
+   become: yes
+   tasks:
+     - mane: Update GDM
+       command: dconf update    # ansible.builtin.command: /usr/bin/stop-software
+       ignore_error: true
+       
