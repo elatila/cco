@@ -14,7 +14,8 @@
        when: ansible_distribution == 'Oracle Linux'
 
      - service: 
-       name: avahi-daemon
-       enabled: no 
-       state: stopped
-       when: is_avahi|failed
+         become: yes
+         name: avahi-daemon
+         enabled: no 
+         state: stopped
+         when: is_avahi|failed
