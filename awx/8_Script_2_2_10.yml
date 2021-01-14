@@ -1,0 +1,11 @@
+---
+ - name: 2.2.3 Disable httpd
+   hosts: all
+   become: yes
+   ignore_errors: yes
+   tasks:
+     - name: Stop httpd
+       systemd:
+         name: httpd
+         enabled: no 
+         state: stopped
