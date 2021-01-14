@@ -8,4 +8,4 @@
          name: avahi-daemon
          enabled: no 
          state: stopped
-         ignore_errors: true
+      #   ignore_errors: true
