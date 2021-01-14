@@ -2,10 +2,11 @@
  - name: 2.2.3 Disable avahi-deamon
    hosts: all
    become: yes
+   ignore_errors: yes
    tasks:
      - name: Stop avahi-deamon 
        systemd:
          name: avahi-daemon
          enabled: no 
          state: stopped
-         ignore_errors: yes
+       
