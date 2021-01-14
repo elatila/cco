@@ -15,6 +15,7 @@
           remote_src: yes
           
      - name: hange file ownership, group, and permissions
+       become: yes
        file: 
           path: /boot/grub2/grub.cfg
           owner: root
