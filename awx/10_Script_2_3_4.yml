@@ -1,0 +1,10 @@
+---
+ - name: 2.3.4 Remove Telnet
+   hosts: all
+   become: yes
+   ignore_errors: yes
+   tasks:
+     - name: Remove Telnet
+       yum:
+         name: telnet
+         state: absent
