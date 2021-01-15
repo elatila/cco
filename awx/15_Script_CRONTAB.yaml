@@ -4,7 +4,7 @@
    tasks: 
      - name: Change file ownership, group, and permissions
        file: 
-          path: /etc/crontab
+          path: '{{ item.path }}'
           owner: root
           group: root
           mode: '0700' # og-rwx
@@ -28,4 +28,5 @@
           owner: root
           group: root
           mode: '0700' # og-rwx
-          
+       with_items:
+          - { path: /etc/crontab }
