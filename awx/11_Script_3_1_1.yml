@@ -12,4 +12,4 @@
       ansible.posix.sysctl:
         name: net.ipv4.route.flush
         value: '1'
-        systecl_set: yes
+        systcl_set: yes
