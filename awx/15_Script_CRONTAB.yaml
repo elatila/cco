@@ -8,8 +8,7 @@
           owner: root
           group: root
           mode: '0700' # og-rwx
-         
-        with_items:
+       with_items:
           - { path: /etc/crontab }
           - { path: /etc/cron.hourly }
           - { path: /etc/cron.daily }
