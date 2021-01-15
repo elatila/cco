@@ -1,0 +1,15 @@
+---
+ - name: Set ip forwarding IPv4
+   hosts: all
+   become: yes
+   tasks:
+    - name: Set ip forwarding on in /proc and verify token value with the sysctl command
+      ansible.posix.sysctl:
+        name: net.ipv4.ip_forward
+        value: '0'
+        sysctl_set: yes
+   - name: Set ip Flush
+     ansible.posix.sysctl:
+        name: net.ipv4.route.flush
+        value: '1'
+        systecl_set: yes
