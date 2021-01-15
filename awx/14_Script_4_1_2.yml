@@ -1,0 +1,14 @@
+---
+ - hosts: all
+   become: yes
+   ignore_errors: yes
+   tasks:
+     - name: 4.1.2 Enable AUDITD
+       systemd:
+         name: auditd
+         enabled: yes
+     - name: 4.1.2 Enable RSYSLOG
+       systemd:
+         name: rsyslog
+         enabled: yes
+         
