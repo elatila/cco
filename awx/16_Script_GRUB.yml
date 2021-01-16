@@ -1,8 +1,8 @@
 ---
- - name: Copy + permission file Grub
+ - name: Copiar + permission file Grub
    hosts: all
    tasks:
-     - name: copy
+     - name: copiar archivos
        become: yes
        copy: 
           src: /etc/default/grub
