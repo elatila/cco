@@ -1,0 +1,19 @@
+---
+ - name: Copiar issue
+   hosts: all
+   become: yes
+   tasks:
+     - name: /etc/selinux/config
+       copy:
+         src: /etc/selinux/config
+         dest: /etc/selinux/config.ori
+         remote_src: yes
+         
+         src: /oracle/copia_etc/config
+         dest: /etc/selinux/config.ori
+         remote_src: yes
+         
+     - name: Enable SELinux
+       selinux:
+         policy: targeted
+         state: enforcing
