@@ -1,0 +1,14 @@
+---
+ - name: Copy issue
+   hosts: all
+   become: yes
+   tasks:
+     - name: /etc/selinux/
+       copy:
+         src: /etc/issue
+         dest: /etc/issue.orig
+         src_remote: yes
+         
+         src: /oracle/copia_etc/issue
+         dest: /etc/issue
+         src_remote: yes
