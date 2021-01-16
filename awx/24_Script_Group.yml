@@ -1,6 +1,6 @@
 ---
  - name: Copy Group
-   host: all
+   hosts: all
    become: yes
    tasks:
      - name: name: Copy Group
