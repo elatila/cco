@@ -3,7 +3,7 @@
    hosts: all
    #become: yes
    tasks:
-      - name: 
+      - name: copy
           copy: 
             src: /etc/default/grub
             dest: /etc/default/grub.orig
