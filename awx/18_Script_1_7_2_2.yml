@@ -3,7 +3,7 @@
    hosts: all
    become: yes
    tasks:
-     - name: /etc/selinux/
+     - name: /etc/issue
        copy:
          src: /etc/issue
          dest: /etc/issue.orig
