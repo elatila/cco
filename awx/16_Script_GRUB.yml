@@ -8,10 +8,10 @@
           dest: /etc/default/grub.orig
           remote_src: yes
           
-          src: /oracle/copia_etc/grub
-          dest: /etc/default/grub
-          remote_src: yes
-       command: grub2-mkconfig -o /boot/grub2/grub.cfg
-       when: grub_config.stat.exists == False
-       command: grub2-mkconfig > /boot/grub2/grub.cfg
-       when: grub_config.stat.exists == False
+#          src: /oracle/copia_etc/grub
+#          dest: /etc/default/grub
+#          remote_src: yes
+#       command: grub2-mkconfig -o /boot/grub2/grub.cfg
+#       when: grub_config.stat.exists == False
+#       command: grub2-mkconfig > /boot/grub2/grub.cfg
+#       when: grub_config.stat.exists == False
