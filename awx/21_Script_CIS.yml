@@ -1,0 +1,14 @@
+--- 
+ - name: copy CIS
+   hosts: all
+   become: yes
+   tasks:
+     - name: c/etc/modprobe.d/CIS.conf
+       copy:
+        # src: /etc/modprobe.d/CIS.conf
+        # dest: /etc/modprobe.d/CIS.conf.orig 
+        # remote_src: yes
+        src: /oracle/copia_etc/CIS.conf
+        dest: /etc/modprobe.d/CIS.conf
+        remote_src: yes
+        
