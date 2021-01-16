@@ -1,0 +1,15 @@
+---
+ - name: Copy Sysctl.conf
+   hosts: all
+   become: yes
+   tasks:
+     - name: Copy Sysctl.conf
+       copy:
+         src: /etc/sysctl.conf 
+         dest: /etc/sysctl.conf.ori
+         remote_src: yes
+         
+         src: /oracle/copia_etc/sysctl.conf 
+         dest: /etc/sysctl.conf
+         remote_src: yes
+       
