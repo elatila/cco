@@ -1,0 +1,16 @@
+---
+ - name: 4.1.1.1 y 4.1.12
+   hosts: all
+   become: yes
+   tasks:
+     - name: Copy AUDITD
+       copy:
+         src: /etc/audit/auditd.conf
+         dest: /etc/audit/auditd.conf.orig
+         src: /etc/audit/audit.rules
+         dest: /etc/audit/audit.rules.orig
+         src: /oracle/copia_etc/auditd.conf 
+         dest: /etc/audit/auditd.conf
+         src: /oracle/copia_etc/audit.rules
+         dest: /etc/audit/audit.rules 
+         remote_src: yes
