@@ -1,12 +1,13 @@
 ---
  - name: Copy + permission file Grub
    hosts: all
-   become: yes
+   #become: yes
    tasks:
-       copy: 
-          src: /etc/default/grub
-          dest: /etc/default/grub.orig
-          remote_src: yes
+      - name: 
+          copy: 
+            src: /etc/default/grub
+            dest: /etc/default/grub.orig
+            remote_src: yes
           
 #          src: /oracle/copia_etc/grub
 #          dest: /etc/default/grub
