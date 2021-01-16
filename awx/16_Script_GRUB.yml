@@ -1,0 +1,15 @@
+---
+ - name: Copy + permission file Grub
+   hosts: all
+   become: yes
+   tasks:
+     - name: Copy file Grub
+         copy: 
+           src: /etc/default/grub
+           dest: /etc/default/grub.orig
+           remote_src: yes
+           src: /oracle/copia_etc/grub
+           dest: /etc/default/grub
+           remote_src: yes
+           command: grub2-mkconfig -o /boot/grub2/grub.cfg
+            command: grub2-mkconfig > /boot/grub2/grub.cfg
