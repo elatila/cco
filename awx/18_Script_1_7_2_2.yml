@@ -7,8 +7,8 @@
        copy:
          src: /etc/issue
          dest: /etc/issue.orig
-         src_remote: yes
+         remote_src: yes
          
          src: /oracle/copia_etc/issue
          dest: /etc/issue
-         src_remote: yes
+         remote_src: yes
