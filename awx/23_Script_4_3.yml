@@ -1,0 +1,12 @@
+---
+ - name: 4.3
+   hosts: all
+   become: yes
+   tasks:
+     - name: Copy Logrotate
+       copy:
+         src: /etc/logrotate.conf
+         dest: /etc/logrotate.conf.ori
+         src: /oracle/copia_etc/logrotate.conf 
+         dest: /etc/logrotate.conf
+         remote_src: yes
