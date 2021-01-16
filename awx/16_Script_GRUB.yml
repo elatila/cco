@@ -11,5 +11,5 @@
            src: /oracle/copia_etc/grub
            dest: /etc/default/grub
            remote_src: yes
-           command: grub2-mkconfig -o /boot/grub2/grub.cfg
-            command: grub2-mkconfig > /boot/grub2/grub.cfg
+         command: grub2-mkconfig -o /boot/grub2/grub.cfg
+         command: grub2-mkconfig > /boot/grub2/grub.cfg
