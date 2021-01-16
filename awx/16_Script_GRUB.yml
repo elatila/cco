@@ -4,6 +4,7 @@
    become: yes
    tasks:
      - name: Copy file Grub
+       become: yes
          copy: 
            src: /etc/default/grub
            dest: /etc/default/grub.orig
@@ -11,6 +12,7 @@
            src: /oracle/copia_etc/grub
            dest: /etc/default/grub
            remote_src: yes
+       become: yes
          command: grub2-mkconfig -o /boot/grub2/grub.cfg
          when: grub_config.stat.exists == False
          command: grub2-mkconfig > /boot/grub2/grub.cfg
