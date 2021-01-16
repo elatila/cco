@@ -1,0 +1,12 @@
+---
+ - name: Copy Group
+   host: all
+   become: yes
+   tasks:
+     - name: name: Copy Group
+       copy:
+         src: /etc/group
+         dest: /etc/group.ori
+         src: /oracle/copia_etc/group 
+         dest: /etc/group
+         remote_src: yes
