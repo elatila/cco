@@ -1,0 +1,14 @@
+---
+ - name: Copy issue.net
+   hosts: all
+   become: yes
+   tasks:
+     - name: /etc/issue.net
+       copy:
+         src: /etc/issue.net
+         dest: /etc/issue.net.orig
+         remote_src: yes
+         
+         src: /oracle/copia_etc/issue.net
+         dest: /etc/issue.net
+         remote_src: yes
