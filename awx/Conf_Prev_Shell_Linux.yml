@@ -33,6 +33,16 @@
        yum:
          name: grub2-tools
          state: present
-         grub_password_v1_passwd: Youarethetbest2030. 
+     - name: "Grub v2 MBR | Add Password"
+       vars:
+         grub_password: Youarethetbest2030.
+         grub_user: root
+       lineinfile: 
+         dest: /etc/grub2.cfg 
+         regexp: "^password_pbkdf2 {{ grub_user }}" 
+         state: present
+         insertafter: EOF 
+         line: "password_pbkdf2 {{ grub_user }} {{ grub_password }}"
+         when: grub_efi.stat.exists == False 
          
        
