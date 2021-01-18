@@ -33,6 +33,6 @@
        yum:
          name: grub2-tools
          state: present
-         
+         grub_password_v1_passwd: Youarethetbest2030. 
          
        
