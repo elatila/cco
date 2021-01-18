@@ -28,4 +28,11 @@
        lineinfile:
          path: /etc/crontab
          line: '0 5 * * * /usr/sbin/aide –check'
+         
+     - name: Install Grub2
+       yum:
+         name: grub2-tools
+         state: present
+         
+         
        
