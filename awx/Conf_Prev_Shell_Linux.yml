@@ -10,7 +10,7 @@
      - name: Install AIDE
        yum:
          name: aide
-         state: latesd
+         state: present
      - name: Initialize AIDE database in node
        command: aide -i
      - name: Retrieve AIDE database from node
