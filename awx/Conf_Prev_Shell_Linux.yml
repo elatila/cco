@@ -44,5 +44,12 @@
          insertafter: EOF 
          line: "password_pbkdf2 {{ grub_user }} {{ grub_password }}"
        #when: grub_efi.stat.exists == False 
+       
+     - name: Incluir a sudoers 
+       command: echo 'grid ALL=(root) ALL' >> /etc/sudoers
+       command: echo 'psoft ALL=(root) ALL' >> /etc/sudoers 
+       
+    
+       
          
        
