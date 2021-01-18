@@ -1,0 +1,8 @@
+---
+ - name: Configuraciones previas a la ejecución del Script en linux.
+   host: all
+   become: yes
+   tasks:
+     - name: Crear un usuario admin con permisos de root
+       command: echo 'admin ALL=(ALL) ALL' >> /etc/sudoers
+       
