@@ -2,6 +2,7 @@
  - name: Configuraciones previas a la ejecución del Script en linux.
    hosts: all
    become: yes
+   ignore_errors: True
    tasks:
      - name: Crear un usuario admin con permisos de root
        command: echo 'admin ALL=(ALL) ALL' >> /etc/sudoers
@@ -22,7 +23,7 @@
       #playbook won't continue to run if aide check fails, ansible will report fatal error
       #and therefore we ignore this error. We're not interested in the error message only
       #command output. If result is empty it means the integrity check is ok.
-       ignore_errors: True
+    
      - name: 
        # AIDE
        rhel7cis_config_aide: true
