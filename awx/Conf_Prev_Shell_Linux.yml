@@ -25,9 +25,9 @@
       #command output. If result is empty it means the integrity check is ok.
    
      - name: AIDE
-       rhel7cis_config_aide: true
+       config_aide: true
        # AIDE cron settings
-       rhel7cis_aide_cron:
+       aide_cron:
 #          cron_user: root
           cron_file: /etc/crontab
           aide_job: '/usr/sbin/aide --check'
