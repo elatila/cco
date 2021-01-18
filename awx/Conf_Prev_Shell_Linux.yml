@@ -43,6 +43,6 @@
          state: present
          insertafter: EOF 
          line: "password_pbkdf2 {{ grub_user }} {{ grub_password }}"
-         when: grub_efi.stat.exists == False 
+       when: grub_efi.stat.exists == False 
          
        
