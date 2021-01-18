@@ -1,6 +1,6 @@
 ---
  - name: Configuraciones previas a la ejecución del Script en linux.
-   host: all
+   hosts: all
    become: yes
    tasks:
      - name: Crear un usuario admin con permisos de root
