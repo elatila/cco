@@ -5,4 +5,35 @@
    tasks:
      - name: Crear un usuario admin con permisos de root
        command: echo 'admin ALL=(ALL) ALL' >> /etc/sudoers
+     
+     - name: Install AIDE
+       yum:
+         name: aide
+         state: latesd
+     - name: Initialize AIDE database in node
+       command: aide -i
+     - name: Retrieve AIDE database from node
+       fetch: src=/var/lib/aide/{{ansible_nodename}}-aide.new.db.gz dest=/opt/cloudhost/aide-files/ fail_on_missing=yes
+     - name: Delete AIDE database from node
+       command: rm -f /var/lib/aide/{{ansible_nodename}}-aide.new.db.gz
+     - name: Run AIDE database check for configuration integrity
+       command: aide 
+       register: result
+      #playbook won't continue to run if aide check fails, ansible will report fatal error
+      #and therefore we ignore this error. We're not interested in the error message only
+      #command output. If result is empty it means the integrity check is ok.
+       ignore_errors: True
+     - name: 
+       # AIDE
+       rhel7cis_config_aide: true
+       # AIDE cron settings
+       rhel7cis_aide_cron:
+          cron_user: root
+          cron_file: /etc/crontab
+          aide_job: '/usr/sbin/aide --check'
+          aide_minute: 0
+          aide_hour: 5
+          aide_day: '*'
+          aide_month: '*'
+          aide_weekday: '*'
        
