@@ -3,6 +3,6 @@
    hosts: all
    become: yes
    tasks:
-     - inlcude_tasks: Conf_Prev_Shell_Linux.yml
+     - include_tasks: Conf_Prev_Shell_Linux.yml
      - include_tasks: 1_Script_1.3.1.yml
         # remote_src: yes
