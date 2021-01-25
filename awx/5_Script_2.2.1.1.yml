@@ -1,10 +1,11 @@
 ---
- - name: 2.2.1.1 Install NTP
+ - name: 2.2.1.1 Install 
    hosts: all
    become: yes
    tasks:
+     - name: Start install NTP + Chrony
        yum:
-        - name: ntp
-          state: latest
-        - name: chrony
-          state: latest
+         name: ntp
+         state: latest
+         name: chrony
+         state: latest
