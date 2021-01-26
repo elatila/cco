@@ -1,0 +1,12 @@
+---
+ - name: Copy files
+   hosts: all
+   become: yes
+   tasks:
+     - name: start copy files
+         copy:
+           src: /etc/security/pwquality.conf
+           dest: /etc/security/pwquality.conf.ori
+           src: /oracle/copia_etc/pwquality.conf
+           dest: /etc/security/pwquality.conf
+           remote_src: yes
