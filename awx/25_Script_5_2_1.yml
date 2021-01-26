@@ -1,0 +1,22 @@
+---
+ - name: Module SSH
+   hosts: all
+   become: yes
+   tasks:
+     - name: Change file ownership, group, and permissions
+       file: 
+          path: '{{ item.path }}'
+          owner: root
+          group: root
+          mode: '0700' # og-rwx
+       with_items:
+          - { path: /etc/ssh/sshd_config }
+          - { path: /etc/ssh/sshd_config }
+          
+     - name: copy files sshd
+       copy:
+         src: /etc/security/pwquality.conf
+         dest: /etc/security/pwquality.conf.ori
+         src: /oracle/copia_etc/pwquality.conf
+         dest: /etc/security/pwquality.conf
+         remote_src: yes
