@@ -2,11 +2,17 @@
  - name: Copy files
    hosts: all
    become: yes
+   ignore_errors: True
    tasks:
      - name: start copy files
-         copy:
-           src: /etc/security/pwquality.conf
-           dest: /etc/security/pwquality.conf.ori
-           src: /oracle/copia_etc/pwquality.conf
-           dest: /etc/security/pwquality.conf
-           remote_src: yes
+       copy:
+         src: /etc/security/pwquality.conf
+         dest: /etc/security/pwquality.conf.ori
+         src: /oracle/copia_etc/pwquality.conf
+         dest: /etc/security/pwquality.conf
+         remote_src: yes
+
+     - name: nologin mysql
+       command: usermod -s /sbin/nologin mysql 
+       command: useradd -D -f 30
+       command: chage --inactive 30 psoft
