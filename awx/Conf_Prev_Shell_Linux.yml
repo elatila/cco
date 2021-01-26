@@ -14,7 +14,9 @@
      - name: Initialize AIDE database in node
        command: aide -i
      - name: Retrieve AIDE database from node
-       fetch: src=/var/lib/aide/{{ansible_nodename}}-aide.new.db.gz dest=/opt/cloudhost/aide-files/ fail_on_missing=yes
+       fetch: 
+         src: /var/lib/aide/{{ansible_nodename}}-aide.new.db.gz 
+         dest: /opt/cloudhost/aide-files/ fail_on_missing=yes
      - name: Delete AIDE database from node
        command: rm -f /var/lib/aide/{{ansible_nodename}}-aide.new.db.gz
      - name: Run AIDE database check for configuration integrity
