@@ -60,8 +60,8 @@
        lineinfile: 
          path: /etc/sysctl.conf
          state: present
-         insertafter: '^net'
-         line: 'net.ipv4.icmp_echo_ignore_all = 1'
+         insertafter: "^net"
+         line: "net.ipv4.icmp_echo_ignore_all = 1"
        command: sysctl -w net.ipv6.conf.all.disable_ipv6=1
        command: sysctl -w net.ipv4.tcp_timestamps=0 
        command: net.ipv4.tcp_timestamps=0
