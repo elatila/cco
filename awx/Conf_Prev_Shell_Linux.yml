@@ -72,8 +72,8 @@
          line: "net.ipv4.tcp_timestamps = 0"
       
      - name: Modificación IPv6
-       command: sysctl -w net.ipv6.conf.all.disable_ipv6 = 1
-       command: sysctl -w net.ipv4.tcp_timestamps = 0 
+       command: sysctl -w net.ipv6.conf.all.disable_ipv6=1
+       command: sysctl -w net.ipv4.tcp_timestamps=0 
               
      - name: copiar archivo sshd_config
        copy:
