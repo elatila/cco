@@ -53,15 +53,21 @@
        #when: grub_efi.stat.exists == False 
        
      - name: Incluir a sudoers 
-       command: echo 'grid ALL=(root) ALL' >> /etc/sudoers
-       command: echo 'psoft ALL=(root) ALL' >> /etc/sudoers 
+       lineinfile:
+         path: /etc/sudoers
+         state: present
+         insertafter: '^root'
+         line: '%grid ALL=(root) ALL'
+         line: '%psoft ALL=(root) ALL'         
+         validate: 'visudo -cf %s'
+
        
-     - name: Modificiar IPv4 
-       lineinfile: 
-          path: /etc/sysctl.conf
-          state: present
-          insertafter: EOF
-          line: "net.ipv4.icmp_echo_ignore_all = 1"
+    # - name: Modificiar IPv4 
+     #  lineinfile: 
+      #    path: /etc/sysctl.conf
+       #   state: present
+        #  insertafter: EOF
+         # line: "net.ipv4.icmp_echo_ignore_all = 1"
       
       - name: Modificación IPv6
          command: sysctl -w net.ipv6.conf.all.disable_ipv6=1
