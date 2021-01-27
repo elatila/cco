@@ -16,9 +16,9 @@
        file:
          path: /oracle
          state: directory
-       git:
-         repo: 'https://github.com/elatila/cco/blob/master/awx/copia_etc.zip'
-         dest: /oracle
+       #git:
+        # repo: 'https://github.com/elatila/cco/blob/master/awx/copia_etc.zip'
+         #dest: /oracle
      
      #- name: Install AIDE
       # yum:
