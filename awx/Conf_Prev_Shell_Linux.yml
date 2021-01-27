@@ -12,13 +12,15 @@
          line: '%admin ALL=(ALL) ALL'
          validate: 'visudo -cf %s'
          
-     - name: Crear directorio /oracle + copiado de archivos desde repositorio
+     - name: Crear directorio /oracle 
        file:
          path: /oracle
          state: directory
-       #git:
-        # repo: 'https://github.com/elatila/cco/blob/master/awx/copia_etc.zip'
-         #dest: /oracle
+         
+     - name: copiado de archivos desde repositorio
+       git:
+         repo: 'https://github.com/elatila/cco/blob/master/awx/copia_etc.zip'
+         dest: /oracle
      
      #- name: Install AIDE
       # yum:
