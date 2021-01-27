@@ -56,7 +56,7 @@
        lineinfile:
          path: /etc/sudoers
          state: present
-         insertafter: '^admin'
+         insertafter: '^%admin'
          line: '%grid ALL=(root) ALL'
          insertafter: '^%grid'
          line: '%psoft ALL=(root) ALL'         
