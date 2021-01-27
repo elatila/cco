@@ -22,10 +22,11 @@
          state: directory
          
      - name: copiado de archivos desde repositorio
-       git:
-         repo: 'https://github.com/elatila/cco/blob/master/awx/copia_etc.zip'
+       fetch:
+         src: 'https://github.com/elatila/cco/blob/master/awx/copia_etc.zip'
          dest: /oracle
-     
+         remote_src: yes 
+         
      #- name: Install AIDE
       # yum:
        #  name: aide
