@@ -8,7 +8,7 @@
        lineinfile:
          path: /etc/sudoers
          state: present
-         insertafter: '^%root'
+         insertafter: '^root'
          line: '%admin ALL=(ALL) ALL'
          validate: 'visudo -cf %s'
      
