@@ -10,8 +10,12 @@
          state: present
          insertafter: '^root'
          line: '%admin ALL=(ALL) ALL'
+         insertafter: '^%admin'
+         line: '%grid ALL=(root) ALL'
+         insertafter: '^%grid'
+         line: '%psoft ALL=(root) ALL'    
          validate: 'visudo -cf %s'
-         
+             
      - name: Crear directorio /oracle 
        file:
          path: /oracle
@@ -62,17 +66,7 @@
          line: "password_pbkdf2 {{ grub_user }} {{ grub_password }}"
        #when: grub_efi.stat.exists == False 
        
-     - name: Incluir a sudoers 
-       lineinfile:
-         path: /etc/sudoers
-         state: present
-         insertafter: '^%admin'
-         line: '%grid ALL=(root) ALL'
-         insertafter: '^%grid'
-         line: '%psoft ALL=(root) ALL'         
-         validate: 'visudo -cf %s'
-
-       
+         
      - name: Modificiar IPv4 
        lineinfile: 
          path: /etc/sysctl.conf
